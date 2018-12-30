@@ -1,0 +1,21 @@
+
+.teamsContainer{
+  display: flex;
+  height: 300px;
+  justify-content: center;
+  align-items: center;
+  justify-content: space-around;
+}
+.teamContainer{
+  border: 50px;
+  background-color: orange;
+}
+.titleTeamsContainer{
+  width: 100%;
+  height: 250px;
+}
+.bottom-righ{
+  position: absolute;
+  bottom: 8px;
+  right: 16px;  
+}
