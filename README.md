@@ -9,7 +9,6 @@ docker run -p 49160:8080 -d alexandresequeira/node-web-app
 curl -i localhost:49160 
 
 ```
-# FrontendGuardians
 ## Run web Server
 ```bash
 cd guardiansFrontend
