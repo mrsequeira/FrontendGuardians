@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './css/teamsComp.css'
+import {fetchProfiles} from './fetchData'
 class TeamsComponent extends React.Component {
     constructor(props) {
         super(props);
@@ -10,8 +11,8 @@ class TeamsComponent extends React.Component {
         };
       }
       componentDidMount() {
-        fetch("http://localhost:3000/teams")
-          .then(res => res.json())
+        fetchProfiles('teams')
+        .then(res => res.json())
           .then(
             (json) => {
               console.log(json);
@@ -44,13 +45,14 @@ class TeamsComponent extends React.Component {
             <div>
                 <div className='titleTeamsContainer'>
                    <h1>Teams</h1>
+                   <a  href='/team/create'>create Team</a>
                 </div>
-              
+               
                 <div className='teamsContainer'>
                   {items.map(item=>(
                     <div key={item.id}>
-                      <div className='card' style={{width:"70%", height:"20%"}}>
-                      <img src={item.photo} width="100%" height="100%"  ></img>
+                      <div className='card' style={{width:300, height:"20%"}}>
+                      <img src={item.photo} width="300" height="300"  ></img>
                         <div class="card-body">
                         <h3>{item.name}</h3>
                         <p class="card-text">{item.description}</p>

@@ -6,6 +6,7 @@ import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.css';
 import './Components/css/teamsComp.css'
 import TeamsComponent from './Components/TeamsComponent'
+import createTeam from './Components/createTeam';
 const routing = (
   
 
@@ -14,6 +15,7 @@ const routing = (
       <Route path="/" component={App} />
       <Route path="/teams" component={TeamsComponent} />
       <Route path="/themes"/>
+      <Route path="/team/create/" component={createTeam}/>
     </div>
   </Router>
   )
