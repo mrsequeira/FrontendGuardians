@@ -33,3 +33,17 @@
 .mainCss{
   background-color: #61dafb;
 }
+
+
+.deleteButton {
+  visibility: hidden;
+  float: right;
+  margin: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  color: red;
+}
+
+.card-header:hover .deleteButton {
+  visibility: visible;
+}
