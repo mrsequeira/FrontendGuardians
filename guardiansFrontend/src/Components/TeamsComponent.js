@@ -12,7 +12,13 @@ class TeamsComponent extends React.Component {
       componentDidMount() {
         fetch("http://localhost:3000/teams")
           .then(res => res.json())
-          .then((json) => {console.log(json);this.setState({isLoaded: true,items: json,
+          .then(
+            (json) => {
+              console.log(json);
+              this.setState({
+                isLoaded: true,
+                items: json,
+              
               });
               
             },
