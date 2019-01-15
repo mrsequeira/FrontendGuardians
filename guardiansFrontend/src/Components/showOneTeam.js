@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './css/teamsComp.css';
 import {fetchProfiles} from './fetchData';
-
+import {DeleteTeamFromApiAsync} from './fetchData'
 class oneteam  extends React.Component{
   constructor(props) {
     super(props);
@@ -35,6 +35,12 @@ class oneteam  extends React.Component{
         }
       )
   }
+  deleteRequest(){
+    var pageURL = window.location.href;
+    var lastURLSegment = pageURL.substr(pageURL.lastIndexOf('/') + 1);
+  
+    DeleteTeamFromApiAsync(lastURLSegment);
+  }
     render(){
       const { isLoaded, items } = this.state;
       if (!isLoaded) {
@@ -63,7 +69,7 @@ class oneteam  extends React.Component{
                     </ul>
                 <a href={"/update/team/"+ids}>Update</a>
                 <br/>
-                <button>Delete</button>
+                <a href='/teams' onClick={this.deleteRequest}>Delete</a>
                 </div>
                 
           </div>

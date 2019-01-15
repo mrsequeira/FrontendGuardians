@@ -51,3 +51,22 @@ export function  updateTeamFromApiAsync(data) {
     });
 
 } 
+
+
+export function  DeleteTeamFromApiAsync(id) {
+
+  return fetch('http://localhost:3000/teams/'+id, {
+    method: 'delete',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+    },
+  }).then((response) => response.json())
+    .then((responseJson) => {
+      return responseJson.success;
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+
+}
