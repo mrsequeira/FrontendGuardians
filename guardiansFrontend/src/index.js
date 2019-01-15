@@ -8,8 +8,8 @@ import './Components/css/teamsComp.css'
 import TeamsComponent from './Components/TeamsComponent';
 import createTeam from './Components/createTeam';
 import oneteam from './Components/showOneTeam';
+import upadteTeam from './Components/updateTeam';
 const routing = (
-
     <Router>
     <div>
       <Route path="/" component={App} />
@@ -17,6 +17,7 @@ const routing = (
       <Route path="/themes"/>
       <Route path="/team/create/" component={createTeam}/>
       <Route path="/team/" component={oneteam}/>
+      <Route path='/update/team/' component={upadteTeam} />
     </div>
   </Router>
   )

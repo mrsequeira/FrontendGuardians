@@ -42,6 +42,8 @@ class oneteam  extends React.Component{
       }
       else{
           console.log(items) 
+         var ids=items.id;
+          console.log(ids)
         return (
           <div>
               <div className='oneTeamContainer'>
@@ -56,10 +58,14 @@ class oneteam  extends React.Component{
                         Projeto: {items.project}
                       </li>
                       <li fontSize='20px'> 
-                        Descrição: {items.description}
+                        Descrição: {items.description}     
                       </li>
                     </ul>
+                <a href={"/update/team/"+ids}>Update</a>
+                <br/>
+                <button>Delete</button>
                 </div>
+                
           </div>
 
          
