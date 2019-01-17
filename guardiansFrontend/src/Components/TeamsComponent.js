@@ -33,6 +33,17 @@ class TeamsComponent extends React.Component {
           )
       }
 
+      componentDidMount() {
+        fetchProfiles("teams")
+        .then(r =>{
+          return r.json();
+        })
+        .then(data => {
+          console.log(data);
+          this.setState({participants: data, isLoaded:true})
+        })
+        .catch(error => this.setState({error:"CRASHOU", isLoaded:true}))
+      }
     render(){
         const { isLoaded, items } = this.state;
         if (!isLoaded) {
@@ -48,7 +59,7 @@ class TeamsComponent extends React.Component {
                    <a  href='/team/create'>create Team</a>
                 </div>
                 <div className='teamsContainer'>
-                  {items.map(item=>(
+                  {this.state.items.map(item=>(
                     <div key={item.id}>
                       <div className='card' style={{width:300, height:"20%"}}>
                       <img src={item.photo} width="300" height="300"  ></img>
@@ -56,7 +67,6 @@ class TeamsComponent extends React.Component {
                         <h3>{item.name}</h3>
                         <p class="card-text">{item.description}</p>
                         <a href={'/team/'+item.id} className="btn btn-primary">More...
-                        
                         </a>
                         </div>                             
                       </div>
