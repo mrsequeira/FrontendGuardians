@@ -14,6 +14,7 @@ class App extends Component {
             <a  className="menu-item" href="/teams">Teams</a>
             <a  className="menu-item" href="/themes">Themes</a>
             <a  className="menu-item" href="/prices">Pricies</a>
+            <a  className="menu-item" href="/participants">participants</a>
             <button class="btn btn-warning" >Login</button>
           </Menu>
         </div>
