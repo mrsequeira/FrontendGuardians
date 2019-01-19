@@ -59,7 +59,7 @@ class ParticipantsComponent extends Component {
 
         <div>
           {/* <a href="/participant_/create">Create Participant</a> */}
-          <Link to="/participant_/create">Create Participant!</Link>
+          <Link to="/participant/create">Create Participant!</Link>
         </div>
         <div className="row small-up-2 medium-up-5">
 
