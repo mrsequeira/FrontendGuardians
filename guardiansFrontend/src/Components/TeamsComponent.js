@@ -1,17 +1,19 @@
 import React, { Component } from 'react';
-import './css/teamsComp.css'
+import './css/teamsComp.css';
+import {fetchProfiles} from './fetchData';
+
 class TeamsComponent extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
           items: [],
           isLoaded: false,
-          
         };
+      
       }
       componentDidMount() {
-        fetch("http://localhost:3000/teams")
-          .then(res => res.json())
+        fetchProfiles('teams')
+        .then(res => res.json())
           .then(
             (json) => {
               console.log(json);
@@ -30,31 +32,42 @@ class TeamsComponent extends React.Component {
             }
           )
       }
-      
+
+      componentDidMount() {
+        fetchProfiles("teams")
+        .then(r =>{
+          return r.json();
+        })
+        .then(data => {
+          console.log(data);
+          this.setState({participants: data, isLoaded:true})
+        })
+        .catch(error => this.setState({error:"CRASHOU", isLoaded:true}))
+      }
     render(){
         const { isLoaded, items } = this.state;
-       
         if (!isLoaded) {
           return <div>Loading...</div>;
         }
         else{
-
-          console.log(items)  
+        let idItem;
+          console.log(items) 
            return(
             <div>
                 <div className='titleTeamsContainer'>
                    <h1>Teams</h1>
+                   <a  href='/team/create'>create Team</a>
                 </div>
-              
                 <div className='teamsContainer'>
-                  {items.map(item=>(
+                  {this.state.items.map(item=>(
                     <div key={item.id}>
-                      <div className='card' style={{width:"70%", height:"20%"}}>
-                      <img src={item.photo} width="100%" height="100%"  ></img>
-                        <div class="card-body">
+                      <div className='card' style={{width:300, height:"20%"}}>
+                      <img src={item.photo} width="300" height="300"  ></img>
+                        <div name='team' class="card-body"  const teamid={item.id} >
                         <h3>{item.name}</h3>
                         <p class="card-text">{item.description}</p>
-                        <a href={'/teams/' + item.name} className="btn btn-primary">More...</a>
+                        <a href={'/team/'+item.id} className="btn btn-primary">More...
+                        </a>
                         </div>                             
                       </div>
                     </div>
