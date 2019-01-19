@@ -1,6 +1,5 @@
 import React,{Component} from 'react';
 import { getParticipantFromApiAsync } from "./fetchData";
-import { Route, Link, BrowserRouter as Router } from 'react-router-dom';
 
 class createParticipant extends Component {
 

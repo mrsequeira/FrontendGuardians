@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import './css/forms.css';
+import React from 'react';
+//import './src/Components/css/forms.css';
 import {getTeamFromApiAsync} from './fetchData'
 class createTeam extends React.Component {
     constructor(props) {

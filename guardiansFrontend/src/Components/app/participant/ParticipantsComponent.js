@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import './css/participants.css';
+//import './src/Components/css/participants.css';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 import update from 'immutability-helper'
 import Participant from './Participant';
-import { fetchProfiles } from './fetchData';
-import FooterComponent from './FooterComponent'; 
+import { fetchProfiles } from '../../fetchData';
+import FooterComponent from '../../FooterComponent'; 
 
 class ParticipantsComponent extends Component {
 

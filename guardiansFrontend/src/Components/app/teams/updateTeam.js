@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import './css/teamsComp.css';
+import React from 'react';
+//import './src/Components/css/teamsComp.css';
 import {fetchProfiles} from './fetchData';
 import {updateTeamFromApiAsync} from './fetchData'
 class upadteTeam extends React.Component {
@@ -55,7 +55,6 @@ class upadteTeam extends React.Component {
           return <div>Loading...</div>;
         }
         else{
-        var ids=items.id
         return(
             
             <div className='formContainer'>
