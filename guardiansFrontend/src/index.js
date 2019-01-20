@@ -35,14 +35,14 @@ const routing = (
       <Route path='/update/team/' component={upadteTeam} />
 
       <Route path="/participants" component={ParticipantsComponent}/>
-      <Route path="/participant_/create/" component={createParticipant}></Route>
+      <Route path="/participant/create/" component={createParticipant}></Route>
       <Route path="/participant/" component={showOneParticipant}></Route>
-      <Route path="/participant__/update/" component={updateParticipant}></Route>
+      <Route path="/participant/update/" component={updateParticipant}></Route>
       {/*  Authentication routes */}
       <Route path="/login/" component={login}></Route>
       <Route path="/register/" component={register}></Route>
       <Route path="/forgot_password/" component={forgotpwd}></Route>
-      <Route path="/:token/reset_password/" component={newpwd}></Route>
+      <Route path="/:token/reset/" component={newpwd}></Route>
       {/* /:token/reset/ */}
     </div>
   </Router>

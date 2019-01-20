@@ -15,7 +15,9 @@ class App extends Component {
             <a  className="menu-item" href="/themes">Themes</a>
             <a  className="menu-item" href="/prices">Pricies</a>
             <a  className="menu-item" href="/participants">participants</a>
-            <button class="btn btn-warning" >Login</button>
+            {/* Authentication routes */}
+            <a  className="menu-item" href="/register">Register</a>
+            <a  className="menu-item" href="/login">login</a>
           </Menu>
         </div>
       <div className='titleContainer'>
