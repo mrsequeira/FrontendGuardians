@@ -1,6 +1,6 @@
 import React from 'react';
-//import './src/Components/css/forms.css';
-import {getTeamFromApiAsync} from './fetchData'
+import '../../css/teamsComp.css'
+import {getTeamFromApiAsync} from '../../fetchData';
 class createTeam extends React.Component {
     constructor(props) {
         super(props);

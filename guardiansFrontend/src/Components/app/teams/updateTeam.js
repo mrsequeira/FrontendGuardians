@@ -1,7 +1,7 @@
 import React from 'react';
-//import './src/Components/css/teamsComp.css';
-import {fetchProfiles} from './fetchData';
-import {updateTeamFromApiAsync} from './fetchData'
+import '../../css/teamsComp.css';
+import {updateTeamFromApiAsync} from '../../fetchData';
+import {fetchProfiles} from '../../fetchData';
 class upadteTeam extends React.Component {
     constructor(props) {
         super(props);

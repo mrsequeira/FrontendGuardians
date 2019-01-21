@@ -1,7 +1,7 @@
 import React from 'react';
-//import './src/Components/css/teamsComp.css';
-import {fetchProfiles} from './fetchData';
-import {DeleteTeamFromApiAsync} from './fetchData'
+import '../../css/teamsComp.css'
+import {fetchProfiles} from '../../fetchData';
+import {DeleteTeamFromApiAsync} from '../../fetchData';
 class oneteam  extends React.Component{
   constructor(props) {
     super(props);
@@ -12,6 +12,7 @@ class oneteam  extends React.Component{
   
   }
   
+
   componentDidMount() {
     var pageURL = window.location.href;
     var lastURLSegment = pageURL.substr(pageURL.lastIndexOf('/') + 1);
