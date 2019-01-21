@@ -1,5 +1,11 @@
 # FrontendGuardians
 
+### Backend:
+[![Heroku](https://heroku-badge.herokuapp.com/?app=guardianshackatum)](https://guardianshackatum.herokuapp.com/api/v1/)
+
+### Frontend:
+[![Heroku](https://heroku-badge.herokuapp.com/?app=guardiansfrontend)](https://guardiansfrontend.herokuapp.com)
+
 ## Available Scripts
 
 In the project directory, you can run:
