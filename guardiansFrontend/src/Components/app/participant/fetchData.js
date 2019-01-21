@@ -1,14 +1,27 @@
 
+export function getToken() {
+  // Retrieves the user token from localStorage
+  console.log(localStorage.getItem('Authorization'))
+  return localStorage.getItem('Authorization')
+}
+
 export function fetchProfiles(url) {
-    return fetch('http://localhost:3000/'+url)   
+    return fetch('https://guardianshackatum.herokuapp.com/api/v1/'+url,{ 
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Authorization' : 'Bearer ' +  getToken()
+      }
+    })   
 }
 
 export function  getParticipantFromApiAsync(data) {
-  return fetch('http://localhost:3000/participants', {
+  return fetch('https://guardianshackatum.herokuapp.com/api/v1/participants', {
     method: 'post',
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
+      'Authorization' : 'Bearer ' +  getToken()
     },
     body: JSON.stringify({
       name: data.name,
@@ -35,11 +48,12 @@ export function  updateParticipantFromApiAsync(data) {
   var lastURLSegment = pageURL.substr(pageURL.lastIndexOf('/') + 1);
   console.log(lastURLSegment) 
   debugger;
-  return fetch('http://localhost:3000/participants/'+lastURLSegment, {
+  return fetch('https://guardianshackatum.herokuapp.com/api/v1/participants/'+lastURLSegment, {
     method: 'put',
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
+      'Authorization' : 'Bearer ' +  getToken()
     },
     body: JSON.stringify({
       name: data.name,
@@ -64,11 +78,12 @@ export function  updateParticipantFromApiAsync(data) {
 
 export function  deleteParticipantFromApiAsync(id) {
 
-  return fetch('http://localhost:3000/participants/'+id, {
+  return fetch('https://guardianshackatum.herokuapp.com/api/v1/participants/'+id, {
     method: 'delete',
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
+      'Authorization' : 'Bearer ' +  getToken()
     },
   }).then((response) => response.json())
     .then((responseJson) => {

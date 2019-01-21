@@ -4,7 +4,7 @@ import axios from 'axios';
 import {Link} from 'react-router-dom';
 import update from 'immutability-helper'
 import Participant from './Participant';
-import { fetchProfiles } from '../../fetchData';
+import { fetchProfiles } from './fetchData';
 import FooterComponent from '../../FooterComponent'; 
 
 class ParticipantsComponent extends Component {
@@ -33,7 +33,7 @@ class ParticipantsComponent extends Component {
   }
 
   deleteParticipant = (id) => {
-    axios.delete(`http://localhost:3000/participants/${id}`)
+    axios.delete(`https://guardianshackatum.herokuapp.com/api/v1/participants/${id}`)
     .then(response => {
       const ideaIndex = this.state.participants.findIndex(x => x.id === id)
       console.log(ideaIndex);
@@ -59,7 +59,7 @@ class ParticipantsComponent extends Component {
 
         <div>
           {/* <a href="/participant_/create">Create Participant</a> */}
-          <Link to="/participant_/create">Create Participant!</Link>
+          <Link to="/participant/create">Create Participant!</Link>
         </div>
         <div className="row small-up-2 medium-up-5">
 

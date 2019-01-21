@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';    
 import { Route, BrowserRouter as Router } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.css';
-import './Components/css/teamsComp.css'
+import './Components/app/teams/css/teamsComp.css'
 // team imports
 import TeamsComponent from './Components/app/teams/TeamsComponent';
 import createTeam from './Components/app/teams/createTeam';
@@ -43,7 +43,6 @@ const routing = (
       <Route path="/register/" component={register}></Route>
       <Route path="/forgot_password/" component={forgotpwd}></Route>
       <Route path="/:token/reset/" component={newpwd}></Route>
-      {/* /:token/reset/ */}
     </div>
   </Router>
   )
