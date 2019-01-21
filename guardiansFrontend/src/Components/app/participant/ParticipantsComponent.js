@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
-import './css/participants.css';
+//import './src/Components/css/participants.css';
 import axios from 'axios';
 import {Link} from 'react-router-dom';
 import update from 'immutability-helper'
 import Participant from './Participant';
 import { fetchProfiles } from './fetchData';
-import FooterComponent from './FooterComponent'; 
+import FooterComponent from '../../FooterComponent'; 
 
 class ParticipantsComponent extends Component {
 
@@ -33,7 +33,7 @@ class ParticipantsComponent extends Component {
   }
 
   deleteParticipant = (id) => {
-    axios.delete(`http://localhost:3000/participants/${id}`)
+    axios.delete(`https://guardianshackatum.herokuapp.com/api/v1/participants/${id}`)
     .then(response => {
       const ideaIndex = this.state.participants.findIndex(x => x.id === id)
       console.log(ideaIndex);

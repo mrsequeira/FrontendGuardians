@@ -1,7 +1,6 @@
 import React, { Component } from "react";
 import { fetchProfiles } from './fetchData';
 import { deleteParticipantFromApiAsync } from './fetchData';
-import { Link } from 'react-router-dom';
 
 class showOneParticipant extends Component {
 

@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React from 'react';
 import './css/teamsComp.css';
 import {fetchProfiles} from './fetchData';
 
@@ -31,18 +31,6 @@ class TeamsComponent extends React.Component {
               });
             }
           )
-      }
-
-      componentDidMount() {
-        fetchProfiles("teams")
-        .then(r =>{
-          return r.json();
-        })
-        .then(data => {
-          console.log(data);
-          this.setState({participants: data, isLoaded:true})
-        })
-        .catch(error => this.setState({error:"CRASHOU", isLoaded:true}))
       }
     render(){
         const { isLoaded, items } = this.state;

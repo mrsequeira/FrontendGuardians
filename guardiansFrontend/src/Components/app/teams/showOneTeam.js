@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import './css/teamsComp.css';
+import React from 'react';
+//import './src/Components/css/teamsComp.css';
 import {fetchProfiles} from './fetchData';
 import {DeleteTeamFromApiAsync} from './fetchData'
 class oneteam  extends React.Component{
