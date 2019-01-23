@@ -1,7 +1,6 @@
 import React, { Component } from 'react';
 //import './src/Components/css/participants.css';
 import axios from 'axios';
-import {Link} from 'react-router-dom';
 import update from 'immutability-helper'
 import Participant from './Participant';
 import { fetchProfiles } from '../../fetchData';
@@ -33,7 +32,15 @@ class ParticipantsComponent extends Component {
   }
 
   deleteParticipant = (id) => {
-    axios.delete(`http://localhost:3000/participants/${id}`)
+    let token = localStorage.getItem('Authorization');
+    const AuthStr = 'Bearer '.concat(token);
+    axios.delete(`http://localhost:3000/api/v1/participants/${id}`,{
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+        'Authorization': AuthStr,
+      }
+    })
     .then(response => {
       const ideaIndex = this.state.participants.findIndex(x => x.id === id)
       console.log(ideaIndex);
@@ -58,8 +65,8 @@ class ParticipantsComponent extends Component {
         </h1>   
 
         <div>
-          {/* <a href="/participant_/create">Create Participant</a> */}
-          <Link to="/participant_/create">Create Participant!</Link>
+          <a href="/participant_/create">Create Participant</a>
+          {/* <Link to="/participant/create">Create Participant!</Link> */}
         </div>
         <div className="row small-up-2 medium-up-5">
 

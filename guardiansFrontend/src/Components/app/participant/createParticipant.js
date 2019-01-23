@@ -1,5 +1,5 @@
 import React,{Component} from 'react';
-import { getParticipantFromApiAsync } from "./fetchData";
+import { getParticipantFromApiAsync } from "../../fetchData";
 
 class createParticipant extends Component {
 
@@ -15,6 +15,7 @@ class createParticipant extends Component {
       phone:"",
       course:"",
       team_id:"",
+      user_id:"",
     }
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
@@ -51,6 +52,8 @@ class createParticipant extends Component {
           <input name='course' type="text" value={this.state.value} onChange={this.handleChange} className="form-control" placeholder="Enter link Photo" />
           <label for="exampleInputEmail1">team_id</label>
           <input name='team_id' type="text" value={this.state.value} onChange={this.handleChange} className="form-control" placeholder="Enter link Photo" />
+          <label for="exampleInputEmail1">user_id</label>
+          <input name='user_id' type="text" value={this.state.value} onChange={this.handleChange} className="form-control" placeholder="Enter link Photo" />
           <br></br>
           <input type="Submit" value="Submit"></input>
         </form>

@@ -35,9 +35,9 @@ const routing = (
       <Route path='/update/team/' component={upadteTeam} />
 
       <Route path="/participants" component={ParticipantsComponent}/>
-      <Route path="/participant/create/" component={createParticipant}></Route>
+      <Route path="/participant_/create/" component={createParticipant}></Route>
       <Route path="/participant/" component={showOneParticipant}></Route>
-      <Route path="/participant/update/" component={updateParticipant}></Route>
+      <Route path="/update/participant/" component={updateParticipant}></Route>
       {/*  Authentication routes */}
       <Route path="/login/" component={login}></Route>
       <Route path="/register/" component={register}></Route>

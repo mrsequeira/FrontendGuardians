@@ -1,6 +1,6 @@
 import React, { Component } from "react";
-import { fetchProfiles } from './fetchData';
-import { deleteParticipantFromApiAsync } from './fetchData';
+import { fetchProfiles } from '../../fetchData';
+import { deleteParticipantFromApiAsync } from '../../fetchData';
 
 class showOneParticipant extends Component {
 
@@ -64,7 +64,7 @@ class showOneParticipant extends Component {
           </div>
           <div className="card-footer">
             <div className="row">
-              <a href={"/participant__/update/" + ids}>Update me!</a>
+              <a href={"/update/participant/" + ids}>Update me!</a>
             </div>
             <div className="row">
              <a href={"/participants"} onClick={this.handleDelete}>Delete!</a>

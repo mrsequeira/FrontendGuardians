@@ -100,7 +100,8 @@ export function  getParticipantFromApiAsync(data) {
       leader: data.leader,
       phone: data.phone,
       course: data.course,
-      team_id: data.team_id
+      team_id: data.team_id,
+      user_id: data.user_id,
     })
   }).then((response) => response.json())
     .then((responseJson) => {
@@ -132,7 +133,7 @@ export function  updateParticipantFromApiAsync(data) {
       leader: data.leader,
       phone: data.phone,
       course: data.course,
-      team_id: data.team_id
+      team_id: data.team_id,
     })
   }).then((response) => response.json())
     .then((responseJson) => {

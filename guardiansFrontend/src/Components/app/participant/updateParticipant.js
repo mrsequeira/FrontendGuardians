@@ -1,6 +1,6 @@
 import React,{Component} from 'react';
-import {fetchProfiles} from './fetchData';
-import {updateParticipantFromApiAsync} from './fetchData';
+import {fetchProfiles} from '../../fetchData';
+import {updateParticipantFromApiAsync} from '../../fetchData';
 
 class updateParticipant extends Component {
 
