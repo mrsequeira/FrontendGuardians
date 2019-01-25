@@ -15,6 +15,7 @@ class App extends Component {
             <a  className="menu-item" href="/themes">Themes</a>
             <a  className="menu-item" href="/prices">Pricies</a>
             <a  className="menu-item" href="/participants">participants</a>
+            <a  className="menu-item" href="/mentors">mentors</a>
             {/* Authentication routes */}
             <a  className="menu-item" href="/register">Register</a>
             <a  className="menu-item" href="/login">login</a>

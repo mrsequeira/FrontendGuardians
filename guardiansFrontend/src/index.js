@@ -15,6 +15,13 @@ import ParticipantsComponent from './Components/app/participant/ParticipantsComp
 import createParticipant  from "./Components/app/participant/createParticipant";
 import showOneParticipant from './Components/app/participant/showOneParticipant';
 import updateParticipant from './Components/app/participant/updateParticipant';
+
+//mentors imports
+import MentorsComponent from './Components/app/mentor/MentorsComponent';
+import showOneMentor from './Components/app/mentor/showOneMentor';
+import createMentor from './Components/app/mentor/createMentor';
+
+
 // Auth imports
 import login from './Components/app/auth/login';
 import register from './Components/app/auth/register';
@@ -38,6 +45,13 @@ const routing = (
       <Route path="/participant_/create/" component={createParticipant}></Route>
       <Route path="/participant/" component={showOneParticipant}></Route>
       <Route path="/update/participant/" component={updateParticipant}></Route>
+
+      {/* Mentors Routes */}
+      <Route path="/mentors" component={MentorsComponent}/>
+      <Route path="/mentor_/create/" component={createMentor}></Route>
+      <Route path="/mentor/" component={showOneMentor}></Route>
+      <Route path="/update/participant/" component={updateParticipant}></Route>
+
       {/*  Authentication routes */}
       <Route path="/login/" component={login}></Route>
       <Route path="/register/" component={register}></Route>
