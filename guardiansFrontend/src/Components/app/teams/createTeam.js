@@ -1,6 +1,11 @@
 import React from 'react';
 import '../../css/teamsComp.css'
 import {getTeamFromApiAsync} from '../../fetchData';
+import Button from '@material-ui/core/Button';
+import PropTypes from 'prop-types';
+import { withStyles } from '@material-ui/core/styles';
+import TeamsComponent from './TeamsComponent';
+import { Route, BrowserRouter as Router } from 'react-router-dom'
 class createTeam extends React.Component {
     constructor(props) {
         super(props);
@@ -32,10 +37,13 @@ class createTeam extends React.Component {
                     <label for="exampleInputEmail1">Team Photo</label>
                     <input name='photo'type="text" value={this.state.value} onChange={this.handleChange} className="form-control" placeholder="Enter link Photo"/>
                     <br></br>
-                    <input type="submit" value="Submit"/>
+                    
+                    <Button type="submit" color="primary"  >Create</Button>
                 </form>
             </div>
         )
     }
+    
 }
-export default createTeam;
+  
+  export default createTeam;

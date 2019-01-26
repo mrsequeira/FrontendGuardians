@@ -1,25 +1,24 @@
 
 let token = localStorage.getItem('Authorization');
 
-const AuthStr = 'Bearer '.concat(token);
 export function fetchProfiles(url) {
-  console.log(AuthStr)
-  return fetch('http://localhost:3000/api/v1/'+url,{
+  console.log('este é o token   '+token)
+  return fetch('https://guardianshackatum.herokuapp.com/api/v1/'+url,{
       method: 'get',
       headers: {
-        'Authorization': AuthStr,
+        'Authorization': token,
       }
   });   
 }
 
 
 export function  getTeamFromApiAsync(data) {
-  return fetch('http://localhost:3000/api/v1/teams', {
+  return fetch('https://guardianshackatum.herokuapp.com/api/v1/teams', {
     method: 'post',
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
-      'Authorization': AuthStr,
+      'Authorization': token,
     },
     body: JSON.stringify({
       name: data.nameTeam,
@@ -41,12 +40,12 @@ export function  updateTeamFromApiAsync(data) {
   var pageURL = window.location.href;
   var lastURLSegment = pageURL.substr(pageURL.lastIndexOf('/') + 1);
   console.log(lastURLSegment)
-  return fetch('http://localhost:3000/api/v1/teams/'+lastURLSegment, {
+  return fetch('https://guardianshackatum.herokuapp.com/api/v1/teams/'+lastURLSegment, {
     method: 'put',
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
-      'Authorization': AuthStr,
+      'Authorization': token,
     },
     body: JSON.stringify({
       name: data.nameTeam,
@@ -66,12 +65,12 @@ export function  updateTeamFromApiAsync(data) {
 
 export function  DeleteTeamFromApiAsync(id) {
 
-  return fetch('http://localhost:3000/api/v1/teams/'+id, {
+  return fetch('https://guardianshackatum.herokuapp.com/api/v1/teams/'+id, {
     method: 'delete',
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
-      'Authorization': AuthStr,
+      'Authorization': token,
     },
   }).then((response) => response.json())
     .then((responseJson) => {
@@ -84,12 +83,12 @@ export function  DeleteTeamFromApiAsync(id) {
 }
 
 export function  getParticipantFromApiAsync(data) {
-  return fetch('http://localhost:3000/api/v1/participants', {
+  return fetch('https://guardianshackatum.herokuapp.com/api/v1/participants', {
     method: 'post',
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
-      'Authorization': AuthStr,
+      'Authorization': token,
     },
     body: JSON.stringify({
       name: data.name,
@@ -116,12 +115,12 @@ export function  updateParticipantFromApiAsync(data) {
   var lastURLSegment = pageURL.substr(pageURL.lastIndexOf('/') + 1);
   console.log(lastURLSegment) 
   debugger;
-  return fetch('http://localhost:3000/api/v1/participants/'+lastURLSegment, {
+  return fetch('https://guardianshackatum.herokuapp.com/api/v1/participants/'+lastURLSegment, {
     method: 'put',
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
-      'Authorization': AuthStr,
+      'Authorization': token,
     },
     body: JSON.stringify({
       name: data.name,
@@ -146,12 +145,12 @@ export function  updateParticipantFromApiAsync(data) {
 
 export function  deleteParticipantFromApiAsync(id) {
 
-  return fetch('http://localhost:3000/api/v1/participants/'+id, {
+  return fetch('https://guardianshackatum.herokuapp.com/api/v1/participants/'+id, {
     method: 'delete',
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
-      'Authorization': AuthStr,
+      'Authorization': token,
     },
   }).then((response) => response.json())
     .then((responseJson) => {

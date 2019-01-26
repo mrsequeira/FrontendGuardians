@@ -56,7 +56,6 @@ class upadteTeam extends React.Component {
         }
         else{
         return(
-            
             <div className='formContainer'>
                 <form onSubmit={this.handleSubmit}>
                     <label for="exampleInputEmail1">Team Name</label>

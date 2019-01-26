@@ -9,12 +9,20 @@ class TeamsComponent extends React.Component {
       this.state = {
         items: [],
         isLoaded: false,
+        error: null,
       };
     
     }
     componentDidMount() {
       fetchProfiles('teams')
-      .then(res => res.json())
+      .then(res => {
+        if (res.ok) {
+          return res.json();
+        }
+        else {
+          throw new Error('Erro');
+        }
+       })
         .then(
           (json) => {
             console.log(json);
@@ -24,25 +32,18 @@ class TeamsComponent extends React.Component {
             
             });
             
-          },
-          (error) => {
-            this.setState({
-              isLoaded: true,
-              error
-            });
           }
         )
+        .catch(error => this.setState({ error }));
     }
 
 
   render(){
-      const { isLoaded, items } = this.state;
-      if (!isLoaded) {
-        return <div>Loading...</div>;
-      }
+    const { error } = this.state;
+    if (error) {
+      return <p>{error.message}</p>;
+    }
       else{
-      let idItem;
-        console.log(items) 
          return(
           <div>
               <div className='titleTeamsContainer'>
@@ -57,7 +58,7 @@ class TeamsComponent extends React.Component {
                       <div name='team' class="card-body"  const teamid={item.id} >
                       <h3>{item.name}</h3>
                       <p class="card-text">{item.description}</p>
-                      <a href={'/team/'+item.id} className="btn btn-primary">More...
+                      <a href={'/oneteam/'+item.id} className="btn btn-primary">More...
                       </a>
                       </div>                             
                     </div>

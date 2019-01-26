@@ -30,8 +30,8 @@ const routing = (
       <Route path="/" component={App} />
       <Route path="/teams" component={TeamsComponent} />
       <Route path="/themes"/>
-      <Route path="/team/create/" component={createTeam}/>
-      <Route path="/team/" component={oneteam}/>
+      <Route path="/team/create" component={createTeam}/>
+      <Route path="/oneteam/" component={oneteam}/>
       <Route path='/update/team/' component={upadteTeam} />
 
       <Route path="/participants" component={ParticipantsComponent}/>

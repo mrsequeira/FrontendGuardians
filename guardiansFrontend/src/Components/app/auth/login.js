@@ -17,7 +17,7 @@ handleSubmit(event) {
 console.log(this.state);
 event.preventDefault();
 
-return fetch('http://localhost:3000/api/v1/login', {
+return fetch('https://guardianshackatum.herokuapp.com/api/v1/login', {
   method: 'post',
   headers: {
     'Accept': 'application/json',
