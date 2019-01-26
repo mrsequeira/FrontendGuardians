@@ -171,7 +171,7 @@ export function  getMentorFromApiAsync(data) {
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
-      'Authorization': AuthStr,
+      'Authorization': token,
     },
     body: JSON.stringify({
       name_mentor: data.name_mentor,
@@ -199,7 +199,7 @@ export function  deleteMentorFromApiAsync(id) {
     headers: {
       'Accept': 'application/json',
       'Content-Type': 'application/json',
-      'Authorization': AuthStr,
+      'Authorization': token,
     },
   }).then((response) => response.json())
     .then((responseJson) => {

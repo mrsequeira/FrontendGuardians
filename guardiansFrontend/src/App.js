@@ -10,18 +10,6 @@ class App extends Component {
     return (
       <div>
         <div className='pageHeader'>
-        {/*
-        <Menu>
-            <a  className="menu-item" href="/">Home</a>
-            <a  className="menu-item" href="/teams">Teams</a>
-            <a  className="menu-item" href="/themes">Themes</a>
-            <a  className="menu-item" href="/prices">Pricies</a>
-            <a  className="menu-item" href="/participants">participants</a>
-            
-            <a  className="menu-item" href="/register">Register</a>
-            <a  className="menu-item" href="/login">login</a>
-        </Menu>
-        */}
         <SwipeableTemporaryDrawer/>
         <div>
 

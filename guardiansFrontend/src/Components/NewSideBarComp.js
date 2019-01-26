@@ -75,6 +75,9 @@ class SwipeableTemporaryDrawer extends React.Component {
                     <a  className="menu-item" href="/participants">participants</a>
                 </li>
                 <li>
+                    <a  className="menu-item" href="/mentors">mentors</a>
+                </li>
+                <li>
                     <a  className="menu-item" href="/register">Register</a>
                 </li>
             </ul>
