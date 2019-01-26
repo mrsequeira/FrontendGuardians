@@ -99,7 +99,8 @@ export function  getParticipantFromApiAsync(data) {
       leader: data.leader,
       phone: data.phone,
       course: data.course,
-      team_id: data.team_id
+      team_id: data.team_id,
+      user_id: data.user_id,
     })
   }).then((response) => response.json())
     .then((responseJson) => {
@@ -131,7 +132,7 @@ export function  updateParticipantFromApiAsync(data) {
       leader: data.leader,
       phone: data.phone,
       course: data.course,
-      team_id: data.team_id
+      team_id: data.team_id,
     })
   }).then((response) => response.json())
     .then((responseJson) => {
@@ -160,4 +161,51 @@ export function  deleteParticipantFromApiAsync(id) {
       console.error(error);
     });
 
+}
+
+//Mentors
+
+export function  getMentorFromApiAsync(data) {
+  return fetch('http://localhost:3000/api/v1/mentors', {
+    method: 'post',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+      'Authorization': AuthStr,
+    },
+    body: JSON.stringify({
+      name_mentor: data.name_mentor,
+      vegan: data.vegan,
+      tshirt_size: data.tshirt_size,
+      mentor_difficulties: data.mentor_difficulties,
+      mentor_allergies: data.mentor_allergies,
+      theme_id: data.theme_id,
+      user_id: data.user_id,
+    })
+  }).then((response) => response.json())
+    .then((responseJson) => {
+      return responseJson.success;
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+}
+
+
+
+export function  deleteMentorFromApiAsync(id) {
+  return fetch('http://localhost:3000/api/v1/mentors/'+id, {
+    method: 'delete',
+    headers: {
+      'Accept': 'application/json',
+      'Content-Type': 'application/json',
+      'Authorization': AuthStr,
+    },
+  }).then((response) => response.json())
+    .then((responseJson) => {
+      return responseJson.success;
+    })
+    .catch((error) => {
+      console.error(error);
+    });
 }
