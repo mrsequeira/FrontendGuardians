@@ -4,7 +4,9 @@ import './index.css';
 import App from './App';    
 import { Route, BrowserRouter as Router } from 'react-router-dom'
 import 'bootstrap/dist/css/bootstrap.css';
+
 import './Components/app/teams/css/teamsComp.css'
+import HomeComponent from './Components/app/home/Blog';
 // team imports
 import TeamsComponent from './Components/app/teams/TeamsComponent';
 import createTeam from './Components/app/teams/createTeam';
@@ -26,27 +28,28 @@ import newpwd from './Components/app/auth/newpwd';
 
 const routing = (
     <Router>
-    <div>
-      <Route path="/" component={App} />
-      <Route path="/teams" component={TeamsComponent} />
-      <Route path="/themes"/>
-      <Route path="/team/create/" component={createTeam}/>
-      <Route path="/team/" component={oneteam}/>
-      <Route path='/update/team/' component={upadteTeam} />
+      <div>
+          <Route path="/" component={App} />
+          <Route path="/welcome" component={HomeComponent} />
+          <Route path="/teams" component={TeamsComponent} />
+          <Route path="/themes"/>
+          <Route path="/team/create/" component={createTeam}/>
+          <Route path="/team/" component={oneteam}/>
+          <Route path='/update/team/' component={upadteTeam} />
 
-      <Route path="/participants" component={ParticipantsComponent}/>
-      <Route path="/participant/create/" component={createParticipant}></Route>
-      <Route path="/participant/" component={showOneParticipant}></Route>
-      <Route path="/participant/update/" component={updateParticipant}></Route>
-      {/*  Authentication routes */}
-      <Route path="/login/" component={login}></Route>
-      <Route path="/register/" component={register}></Route>
-      <Route path="/forgot_password/" component={forgotpwd}></Route>
-      <Route path="/:token/reset/" component={newpwd}></Route>
-    </div>
-  </Router>
+          <Route path="/participants" component={ParticipantsComponent}/>
+          <Route path="/participant/create/" component={createParticipant}></Route>
+          <Route path="/participant/" component={showOneParticipant}></Route>
+          <Route path="/participant/update/" component={updateParticipant}></Route>
+          {/*  Authentication routes */}
+          <Route path="/login/" component={login}></Route>
+          <Route path="/register/" component={register}></Route>
+          <Route path="/forgot_password/" component={forgotpwd}></Route>
+          <Route path="/:token/reset/" component={newpwd}></Route>
+      </div>
+    </Router>
   )
-ReactDOM.render(routing, document.getElementById('root'));
+ReactDOM.render(routing, document.getElementById('root') );
 
 // If you want your app to work offline and load faster, you can change
 // unregister() to register() below. Note this comes with some pitfalls.

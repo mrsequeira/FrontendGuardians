@@ -5,7 +5,6 @@ import {Link} from 'react-router-dom';
 import update from 'immutability-helper'
 import Participant from './Participant';
 import { fetchProfiles } from './fetchData';
-import FooterComponent from '../../FooterComponent'; 
 
 class ParticipantsComponent extends Component {
 
@@ -51,7 +50,7 @@ class ParticipantsComponent extends Component {
     }
 
     return (
-      <div>
+
       <div id="ContainerParticipants" className="container">
         <h1 style={{textAlign:"center"}}>
           All Participants!
@@ -90,9 +89,7 @@ class ParticipantsComponent extends Component {
             </div>
           ))}
         </div>
-      </div>
-      <FooterComponent></FooterComponent>
-      </div>
+        </div>
     );
   }
 }
